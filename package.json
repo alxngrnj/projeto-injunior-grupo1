@@ -1,0 +1,25 @@
+{
+    "name": "projeto-injunior-grupo1",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "server": "json-server --watch carrinhos.json --port 3001"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/alxngrnj/projeto-injunior-grupo1.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/alxngrnj/projeto-injunior-grupo1/issues"
+    },
+    "homepage": "https://github.com/alxngrnj/projeto-injunior-grupo1#readme",
+    "devDependencies": {
+        "json-server": "^0.17.4"
+    }
+}
