@@ -33,7 +33,7 @@ async function buscarCarrosPaginado(pagina = 1, limite = 4){
 function criarCard(carro) {
     const card = document.createElement("div");
     let disponibilidade = "botao-alugar"; let disponibilidadeTexto = "";
-    if(disponibilidade === "alugado") {
+    if(carro.status_disponibilidade === "alugado" || carro.status_disponibilidade === "manutencao") {
         disponibilidade = "botao-indisponivel";
         disponibilidadeTexto = "Indisponível";
     }
