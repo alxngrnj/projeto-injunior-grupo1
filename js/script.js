@@ -16,7 +16,6 @@ async function buscarCarrosPaginado(pagina = 1, limite = 4){
                 carro.status_disponibilidade === "manutencao"
             );
         }
-
         return {
             dados: carros,
             pagina,
@@ -34,7 +33,7 @@ async function buscarCarrosPaginado(pagina = 1, limite = 4){
 function criarCard(carro) {
     const card = document.createElement("div");
     let disponibilidade = "botao-alugar"; let disponibilidadeTexto = "";
-    if(carro.status_disponibilidade === "alugado") {
+    if(disponibilidade === "alugado") {
         disponibilidade = "botao-indisponivel";
         disponibilidadeTexto = "Indisponível";
     }
@@ -45,8 +44,8 @@ function criarCard(carro) {
     card.innerHTML = `<div class="card">
                 <div class="card-imagem">
                     <img src=${carro.url_imagem}>
-                    <p class="categoria">${carro.categoria}</p>
-                    <p class="status">Indisponível</p>
+                    <p class="categoria" id="${carro.categoria}">${carro.categoria}</p>
+                    <p class="status" id="${carro.status_disponibilidade}">${carro.status_disponibilidade}</p>
                     <p class="ranking">#1 da semana</p>
                 </div>
                 <div class="card-descricao">
@@ -142,7 +141,6 @@ const filtro = {
 mostrarCarros(paginaAtual);
 
 const quantidadeVeiculos = document.querySelector(".quantidade-veiculos");
-console.log(quantidadeCarros)
 
 const botaoVoltarPagina = document.querySelector("#voltar-pagina");
 
