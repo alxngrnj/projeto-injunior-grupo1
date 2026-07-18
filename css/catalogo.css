@@ -66,6 +66,13 @@ main {
     border: 1px solid rgba(37, 99, 235, 0.15);
 }
 
+#pesquisa {
+    color: white; /* cor do texto digitado */
+    font-size: 14px;
+    font-family: Cousine;
+    font-weight: 700;
+}
+
 .main-pesquisa input::placeholder {
     font-family: Cousine;
     font-weight: 400;
@@ -94,6 +101,13 @@ main {
     text-align: center;
     color: rgba(100, 116, 139, 1);
     cursor: pointer;
+}
+
+.main-buttons button.ativo {
+    background: rgba(37, 99, 235, 1);
+    box-shadow: 0px 0px 12px 0px rgba(37, 99, 235, 0.35);
+    color: rgba(255, 255, 255, 1);
+
 }
 
 .main-veiculos {

@@ -1,26 +1,21 @@
-async function buscarCarros(){
-    try{
-        const response = await fetch("http://localhost:3001/carros");
-        if(!response.ok) {
-            throw new Error("Erro na requisição: " + response.status);
-        }
-        const carros = await response.json();
-
-        return carros;
-    } catch(error) {
-        console.error("Erro ao buscar carros:", error);
-        throw error;
-    }
-}
-
 async function buscarCarrosPaginado(pagina = 1, limite = 4){
     try{
-        const response = await fetch(`http://localhost:3001/carros?_page=${pagina}&_limit=${limite}`);
+        const url = montarUrl(filtro, pagina, limite);
+        const response = await fetch(url);
+
         if(!response.ok) {
             throw new Error("Erro na requisição: " + response.status);
         }
-        const carros = await response.json();
+
+        let carros = await response.json();
         const totalCarros = response.headers.get("X-Total-Count");
+
+        if(filtro.disponibilidade === "indisponivel") {
+            carros = carros.filter(carro => 
+                carro.status_disponibilidade === "alugado" ||
+                carro.status_disponibilidade === "manutencao"
+            );
+        }
 
         return {
             dados: carros,
@@ -38,7 +33,6 @@ async function buscarCarrosPaginado(pagina = 1, limite = 4){
 
 function criarCard(carro) {
     const card = document.createElement("div");
-    const mainCarros = document.querySelector(".main-veiculos");
     let disponibilidade = "botao-alugar"; let disponibilidadeTexto = "";
     if(carro.status_disponibilidade === "alugado") {
         disponibilidade = "botao-indisponivel";
@@ -75,13 +69,14 @@ async function mostrarCarros(paginaAtual) {
     const main = document.querySelector(".main-veiculos");
     main.innerHTML = "";
     const response = await buscarCarrosPaginado(paginaAtual, 4);
+    totalPaginas = response.totalPaginas;
 
     response.dados.forEach(carro => {
         const card = criarCard(carro);
         main.appendChild(card);
     });
 
-    criarPaginacao(response.totalPaginas);
+    criarPaginacao(totalPaginas);
 }
 
 function criarPaginacao(totalPaginas) {
@@ -101,11 +96,46 @@ function criarPaginacao(totalPaginas) {
     }
 }
 
+function montarUrl(filtro, pagina, limite) {
+    let url = "http://localhost:3001/carros?";
+
+    if(filtro.nome) {
+        url += `nome_like=${encodeURIComponent(filtro.nome)}&`;
+    }
+    if(filtro.categoria != "todos") {
+        url += `categoria=${filtro.categoria}&`;
+    }
+    if(filtro.disponibilidade === "disponivel") {
+        url += `status_disponibilidade=${filtro.disponibilidade}&`;
+    }
+
+    url += `_page=${pagina}&_limit=${limite}`;
+
+    return url;
+}
+
+function selecionarBotao(botaoSelecionado) {
+    botoesFiltro.forEach(botao => {
+        botao.classList.remove("ativo");
+    });
+
+    botaoSelecionado.classList.add("ativo");
+}
+
+
 let paginaAtual = 1;
-const totalPaginas = 5;
+let totalPaginas = 5;
 const limite = 4;
 
+const filtro = {
+    nome: "",
+    categoria: "todos",
+    disponibilidade: "todos"
+};
+
 mostrarCarros(paginaAtual);
+
+
 
 const botaoVoltarPagina = document.querySelector("#voltar-pagina");
 
@@ -124,3 +154,64 @@ botaoAvancarPagina.addEventListener("click", ()=> {
         mostrarCarros(paginaAtual);
     }
 });
+
+
+
+const inputPesquisa = document.querySelector("#pesquisa");
+
+inputPesquisa.addEventListener("input", ()=>{
+    filtro.nome = inputPesquisa.value;
+    paginaAtual = 1;
+    mostrarCarros(paginaAtual);
+});
+
+const botoesFiltro = document.querySelectorAll(".botoes-filtro");
+const botaoDisponivel = document.querySelector("#filtro-disponivel");
+const botaoIndisponivel = document.querySelector("#filtro-indisponivel");
+botaoDisponivel.addEventListener("click", ()=> {
+    filtro.disponibilidade = "disponivel";
+    paginaAtual = 1;
+    selecionarBotao(botaoDisponivel);
+    mostrarCarros(paginaAtual);
+});
+botaoIndisponivel.addEventListener("click", ()=> {
+    filtro.disponibilidade = "indisponivel";
+    paginaAtual = 1;
+    selecionarBotao(botaoIndisponivel);
+    mostrarCarros(paginaAtual);
+});
+
+const botaoTodos = document.querySelector("#filtro-todos");
+const botaoFilme = document.querySelector("#filtro-filme");
+const botaoSerie = document.querySelector("#filtro-serie");
+const botaoDesenho = document.querySelector("#filtro-desenho");
+botaoTodos.addEventListener("click", ()=> {
+    filtro.disponibilidade = "todos";
+    filtro.categoria = "todos";
+    selecionarBotao(botaoTodos);
+    paginaAtual = 1;
+    mostrarCarros(paginaAtual);
+});
+botaoFilme.addEventListener("click", ()=> {
+    filtro.categoria = "filme";
+    paginaAtual = 1;
+    selecionarBotao(botaoFilme);
+    mostrarCarros(paginaAtual);
+});
+botaoSerie.addEventListener("click", ()=> {
+    filtro.categoria = "série";
+    paginaAtual = 1;
+    selecionarBotao(botaoSerie);
+    mostrarCarros(paginaAtual);
+});
+botaoDesenho.addEventListener("click", ()=> {
+    filtro.categoria = "desenho";
+    paginaAtual = 1;
+    selecionarBotao(botaoDesenho);
+    mostrarCarros(paginaAtual);
+});
+
+
+
+
+
