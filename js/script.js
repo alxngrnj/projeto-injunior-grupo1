@@ -70,13 +70,18 @@ async function mostrarCarros(paginaAtual) {
     main.innerHTML = "";
     const response = await buscarCarrosPaginado(paginaAtual, 4);
     totalPaginas = response.totalPaginas;
+    quantidadeCarros = 0;
 
     response.dados.forEach(carro => {
+        quantidadeCarros++;
         const card = criarCard(carro);
         main.appendChild(card);
     });
 
+    quantidadeVeiculos.innerText = `${quantidadeCarros} veículos encontrados`
+
     criarPaginacao(totalPaginas);
+
 }
 
 function criarPaginacao(totalPaginas) {
@@ -126,6 +131,7 @@ function selecionarBotao(botaoSelecionado) {
 let paginaAtual = 1;
 let totalPaginas = 5;
 const limite = 4;
+let quantidadeCarros = 0;
 
 const filtro = {
     nome: "",
@@ -135,7 +141,8 @@ const filtro = {
 
 mostrarCarros(paginaAtual);
 
-
+const quantidadeVeiculos = document.querySelector(".quantidade-veiculos");
+console.log(quantidadeCarros)
 
 const botaoVoltarPagina = document.querySelector("#voltar-pagina");
 
@@ -154,8 +161,6 @@ botaoAvancarPagina.addEventListener("click", ()=> {
         mostrarCarros(paginaAtual);
     }
 });
-
-
 
 const inputPesquisa = document.querySelector("#pesquisa");
 
@@ -210,8 +215,3 @@ botaoDesenho.addEventListener("click", ()=> {
     selecionarBotao(botaoDesenho);
     mostrarCarros(paginaAtual);
 });
-
-
-
-
-
