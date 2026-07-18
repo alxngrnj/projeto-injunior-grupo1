@@ -16,7 +16,6 @@ async function buscarCarrosPaginado(pagina = 1, limite = 4){
                 carro.status_disponibilidade === "manutencao"
             );
         }
-
         return {
             dados: carros,
             pagina,
@@ -135,8 +134,6 @@ const filtro = {
 
 mostrarCarros(paginaAtual);
 
-
-
 const botaoVoltarPagina = document.querySelector("#voltar-pagina");
 
 botaoVoltarPagina.addEventListener("click", ()=> {
@@ -154,7 +151,6 @@ botaoAvancarPagina.addEventListener("click", ()=> {
         mostrarCarros(paginaAtual);
     }
 });
-
 
 
 const inputPesquisa = document.querySelector("#pesquisa");
@@ -210,8 +206,3 @@ botaoDesenho.addEventListener("click", ()=> {
     selecionarBotao(botaoDesenho);
     mostrarCarros(paginaAtual);
 });
-
-
-
-
-
