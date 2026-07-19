@@ -139,7 +139,7 @@ function criarCard(carro) {
                     <img src=${carro.url_imagem}>
                     <p class="categoria" id="${carro.categoria}">${carro.categoria}</p>
                     <p class="status" id="${carro.status_disponibilidade}">${carro.status_disponibilidade}</p>
-                    <p class="ranking">#1 da semana</p>
+                    <p class="ranking">#${quantidadeCarros} da semana</p>
                 </div>
                 <div class="card-descricao">
                     <p id="card-titulo">${carro.nome}</p>
