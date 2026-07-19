@@ -3,18 +3,18 @@ const footer = document.querySelector("footer");
 
 window.addEventListener("load", () => {
     header.innerHTML = `
-        <a id="btn_principal" href="/index.html">
-            <img src="/assets/Button.png" alt="Carr{In}hos" />
+        <a id="btn_principal" href="../index.html">
+            <img src="../assets/Button.png" alt="Carr{In}hos" />
         </a>
         <nav id="centro_head">
-            <a href="/index.html" id="btn_inicio">Início</a>
-            <a href="/html/catalogo.html" id="btn_catalogo">Catálogo</a>
+            <a href="../index.html" id="btn_inicio">Início</a>
+            <a href="../html/catalogo.html" id="btn_catalogo">Catálogo</a>
             <a href="#" id="btn_Reservas">Reservas</a>
-            <a href="/html/sobre.html" id="btn_sobre" class="ativo">Sobre</a>
-            <a href="/html/contato.html" id="btn_contato">Contato</a>
+            <a href="../html/sobre.html" id="btn_sobre" class="ativo">Sobre</a>
+            <a href="../html/contato.html" id="btn_contato">Contato</a>
         </nav>
         <a id="dir_head" href="#">
-            <img src="/assets/explorar.png" alt="Explorar" />
+            <img src="../assets/explorar.png" alt="Explorar" />
         </a>
     `;
 
@@ -22,8 +22,8 @@ window.addEventListener("load", () => {
         <div class="footer-div">
             <div class="footer-coluna">
                 <button class="footer-button">
-                    <img src="/assets/Button.png" />
-                    <a href="/index.html" alt="logo"/a>
+                    <img src="../assets/Button.png" />
+                    <a href="../index.html"></a>
                 </button>
                 <div class="footer-descricao">
                     <p>A única plataforma de aluguel de veículos icônicos do entretenimento mundial.</p>
@@ -39,7 +39,7 @@ window.addEventListener("load", () => {
                 <h3>PLATAFORMA</h3>
                 <nav>
                     <ul class="footer-lista">
-                        <li><a href="/html/catalogo.html">Catálogo</a></li>
+                        <li><a href="../html/catalogo.html">Catálogo</a></li>
                         <li><a href="#">Minhas Reservas</a></li>
                         <li><a href="#">Como Funciona</a></li>
                         <li><a href="#">Preços</a></li>
@@ -50,8 +50,8 @@ window.addEventListener("load", () => {
                 <h3>EMPRESA</h3>
                 <nav>
                     <ul class="footer-lista">
-                        <li><a href="/html/sobre.html">Sobre Nós</a></li>
-                        <li><a href="/html/contato.html">Contato</a></li>
+                        <li><a href="../html/sobre.html">Sobre Nós</a></li>
+                        <li><a href="../html/contato.html">Contato</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Parceiros</a></li>
                     </ul>
@@ -60,10 +60,10 @@ window.addEventListener("load", () => {
             <div class="footer-coluna">
                 <h3>CONTATO</h3>
                 <ul class="footer-contato">
-                    <li><img src="/assets/icone_telefone.png" />+55 (11) 3456-7890</li>
-                    <li><img src="/assets/icone_email.png" />oi@carrinhos.com.br</li>
+                    <li><img src="../assets/icone_telefone.png" />+55 (11) 3456-7890</li>
+                    <li><img src="../assets/icone_email.png" />oi@carrinhos.com.br</li>
                     <li>
-                        <img src="/assets/icone_endereco.png" />Av. Cinematográfica, 1985 Vila Ficção —
+                        <img src="../assets/icone_endereco.png" />Av. Cinematográfica, 1985 Vila Ficção —
                         São Paulo, SP
                     </li>
                 </ul>
@@ -93,15 +93,24 @@ async function buscarCarros() {
     }
 }
 
-async function buscarCarrosPaginado(pagina = 1, limite = 4) {
-    try {
-        const response = await fetch(`http://localhost:3001/carros?_page=${pagina}&_limit=${limite}`);
+async function buscarCarrosPaginado(pagina = 1, limite = 4){
+    try{
+        const url = montarUrl(filtro, pagina, limite);
+        const response = await fetch(url);
+
         if (!response.ok) {
             throw new Error("Erro na requisição: " + response.status);
         }
-        const carros = await response.json();
+
+        let carros = await response.json();
         const totalCarros = response.headers.get("X-Total-Count");
 
+        if(filtro.disponibilidade === "indisponivel") {
+            carros = carros.filter(carro => 
+                carro.status_disponibilidade === "alugado" ||
+                carro.status_disponibilidade === "manutencao"
+            );
+        }
         return {
             dados: carros,
             pagina,
@@ -117,10 +126,8 @@ async function buscarCarrosPaginado(pagina = 1, limite = 4) {
 
 function criarCard(carro) {
     const card = document.createElement("div");
-    const mainCarros = document.querySelector(".main-veiculos");
-    let disponibilidade = "botao-alugar";
-    let disponibilidadeTexto = "";
-    if (carro.status_disponibilidade === "alugado") {
+    let disponibilidade = "botao-alugar"; let disponibilidadeTexto = "";
+    if(carro.status_disponibilidade === "alugado" || carro.status_disponibilidade === "manutencao") {
         disponibilidade = "botao-indisponivel";
         disponibilidadeTexto = "Indisponível";
     } else {
@@ -130,8 +137,8 @@ function criarCard(carro) {
     card.innerHTML = `<div class="card">
                 <div class="card-imagem">
                     <img src=${carro.url_imagem}>
-                    <p class="categoria">${carro.categoria}</p>
-                    <p class="status">Indisponível</p>
+                    <p class="categoria" id="${carro.categoria}">${carro.categoria}</p>
+                    <p class="status" id="${carro.status_disponibilidade}">${carro.status_disponibilidade}</p>
                     <p class="ranking">#1 da semana</p>
                 </div>
                 <div class="card-descricao">
@@ -142,7 +149,7 @@ function criarCard(carro) {
                         <h2 id="card-preco">${carro.valor_aluguel_dia}</h2>
                         <div class="card-aluguel">
                             <button class=${disponibilidade}><a href="#">${disponibilidadeTexto}</a></button>
-                            <button class="botao-detalhes"><a href="#"><img src="/assets/Button_agenda.png"></a></button>
+                            <button class="botao-detalhes"><a href="#"><img src="../assets/Button_agenda.png"></a></button>
                         </div>
                     </div>
                 </div>
@@ -154,13 +161,19 @@ async function mostrarCarros(paginaAtual) {
     const main = document.querySelector(".main-veiculos");
     main.innerHTML = "";
     const response = await buscarCarrosPaginado(paginaAtual, 4);
+    totalPaginas = response.totalPaginas;
+    quantidadeCarros = 0;
 
-    response.dados.forEach((carro) => {
+    response.dados.forEach(carro => {
+        quantidadeCarros++;
         const card = criarCard(carro);
         main.appendChild(card);
     });
 
-    criarPaginacao(response.totalPaginas);
+    quantidadeVeiculos.innerText = `${quantidadeCarros} veículos encontrados`
+
+    criarPaginacao(totalPaginas);
+
 }
 
 function criarPaginacao(totalPaginas) {
@@ -180,11 +193,47 @@ function criarPaginacao(totalPaginas) {
     }
 }
 
+function montarUrl(filtro, pagina, limite) {
+    let url = "http://localhost:3001/carros?";
+
+    if(filtro.nome) {
+        url += `nome_like=${encodeURIComponent(filtro.nome)}&`;
+    }
+    if(filtro.categoria != "todos") {
+        url += `categoria=${filtro.categoria}&`;
+    }
+    if(filtro.disponibilidade === "disponivel") {
+        url += `status_disponibilidade=${filtro.disponibilidade}&`;
+    }
+
+    url += `_page=${pagina}&_limit=${limite}`;
+
+    return url;
+}
+
+function selecionarBotao(botaoSelecionado) {
+    botoesFiltro.forEach(botao => {
+        botao.classList.remove("ativo");
+    });
+
+    botaoSelecionado.classList.add("ativo");
+}
+
+
 let paginaAtual = 1;
-const totalPaginas = 5;
+let totalPaginas = 5;
 const limite = 4;
+let quantidadeCarros = 0;
+
+const filtro = {
+    nome: "",
+    categoria: "todos",
+    disponibilidade: "todos"
+};
 
 mostrarCarros(paginaAtual);
+
+const quantidadeVeiculos = document.querySelector(".quantidade-veiculos");
 
 const botaoVoltarPagina = document.querySelector("#voltar-pagina");
 
@@ -202,4 +251,58 @@ botaoAvancarPagina.addEventListener("click", () => {
         paginaAtual++;
         mostrarCarros(paginaAtual);
     }
+});
+
+const inputPesquisa = document.querySelector("#pesquisa");
+
+inputPesquisa.addEventListener("input", ()=>{
+    filtro.nome = inputPesquisa.value;
+    paginaAtual = 1;
+    mostrarCarros(paginaAtual);
+});
+
+const botoesFiltro = document.querySelectorAll(".botoes-filtro");
+const botaoDisponivel = document.querySelector("#filtro-disponivel");
+const botaoIndisponivel = document.querySelector("#filtro-indisponivel");
+botaoDisponivel.addEventListener("click", ()=> {
+    filtro.disponibilidade = "disponivel";
+    paginaAtual = 1;
+    selecionarBotao(botaoDisponivel);
+    mostrarCarros(paginaAtual);
+});
+botaoIndisponivel.addEventListener("click", ()=> {
+    filtro.disponibilidade = "indisponivel";
+    paginaAtual = 1;
+    selecionarBotao(botaoIndisponivel);
+    mostrarCarros(paginaAtual);
+});
+
+const botaoTodos = document.querySelector("#filtro-todos");
+const botaoFilme = document.querySelector("#filtro-filme");
+const botaoSerie = document.querySelector("#filtro-serie");
+const botaoDesenho = document.querySelector("#filtro-desenho");
+botaoTodos.addEventListener("click", ()=> {
+    filtro.disponibilidade = "todos";
+    filtro.categoria = "todos";
+    selecionarBotao(botaoTodos);
+    paginaAtual = 1;
+    mostrarCarros(paginaAtual);
+});
+botaoFilme.addEventListener("click", ()=> {
+    filtro.categoria = "filme";
+    paginaAtual = 1;
+    selecionarBotao(botaoFilme);
+    mostrarCarros(paginaAtual);
+});
+botaoSerie.addEventListener("click", ()=> {
+    filtro.categoria = "série";
+    paginaAtual = 1;
+    selecionarBotao(botaoSerie);
+    mostrarCarros(paginaAtual);
+});
+botaoDesenho.addEventListener("click", ()=> {
+    filtro.categoria = "desenho";
+    paginaAtual = 1;
+    selecionarBotao(botaoDesenho);
+    mostrarCarros(paginaAtual);
 });
