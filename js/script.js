@@ -157,6 +157,44 @@ function criarCard(carro) {
     return card;
 }
 
+async function criarCardHomePage() {
+    const cards = document.querySelector(".cards-principal");
+    const carros = await buscarCarrosPaginado(1, 4);
+    let counter = 0;
+
+    carros.dados.forEach(carro => {
+        let card = document.createElement("div");
+        if(counter == 0 || counter == 3){
+            card.classList.add("card-principal1");
+            card.innerHTML = `
+                <div class="card-imagem-principal">
+                    <img src="${carro.url_imagem}">
+                </div>
+
+                <div class="card-descricao-principal">
+                    <h2>${carro.nome}</h2>
+                    <p class="status-principal" id="${carro.status_disponibilidade}">${carro.status_disponibilidade}</p>
+                </div>
+            `
+        }
+        else {
+            card.classList.add("card-principal2");
+            card.innerHTML = `
+                <div class="card-imagem-principal">
+                    <img src="${carro.url_imagem}">
+                </div>
+
+                <div class="card-descricao-principal">
+                    <h2>${carro.nome}</h2>
+                    <p class="status-principal" id="${carro.status_disponibilidade}">${carro.status_disponibilidade}</p>
+                </div>
+            `
+        }
+        cards.appendChild(card);
+        counter++;
+    });
+}
+
 async function mostrarCarros(paginaAtual) {
     const main = document.querySelector(".main-veiculos");
     main.innerHTML = "";
@@ -170,14 +208,18 @@ async function mostrarCarros(paginaAtual) {
         main.appendChild(card);
     });
 
-    quantidadeVeiculos.innerText = `${quantidadeCarros} veículos encontrados`
-
+    if(quantidadeVeiculos) {
+        quantidadeVeiculos.innerText = `${quantidadeCarros} veículos encontrados`
+    }
+    
     criarPaginacao(totalPaginas);
 
 }
 
 function criarPaginacao(totalPaginas) {
     const paginacao = document.querySelector(".botoes-paginacao");
+
+    if(!paginacao) return;
     paginacao.innerHTML = "";
 
     for (let i = 1; i <= totalPaginas; i++) {
@@ -219,6 +261,94 @@ function selecionarBotao(botaoSelecionado) {
     botaoSelecionado.classList.add("ativo");
 }
 
+function inicializarCatalogo() {
+
+    mostrarCarros(paginaAtual);
+
+    const botaoVoltarPagina = document.querySelector("#voltar-pagina");
+
+    botaoVoltarPagina.addEventListener("click", () => {
+        if (paginaAtual > 1) {
+            paginaAtual--;
+            mostrarCarros(paginaAtual);
+        }
+    });
+
+    const botaoAvancarPagina = document.querySelector("#avancar-pagina");
+
+    botaoAvancarPagina.addEventListener("click", () => {
+        if (paginaAtual < totalPaginas) {
+            paginaAtual++;
+            mostrarCarros(paginaAtual);
+        }
+    });
+
+    const inputPesquisa = document.querySelector("#pesquisa");
+
+    inputPesquisa.addEventListener("input", () => {
+        filtro.nome = inputPesquisa.value;
+        paginaAtual = 1;
+        mostrarCarros(paginaAtual);
+    });
+
+    const botoesFiltro = document.querySelectorAll(".botoes-filtro");
+
+    const botaoDisponivel = document.querySelector("#filtro-disponivel");
+    const botaoIndisponivel = document.querySelector("#filtro-indisponivel");
+    const botaoTodos = document.querySelector("#filtro-todos");
+    const botaoFilme = document.querySelector("#filtro-filme");
+    const botaoSerie = document.querySelector("#filtro-serie");
+    const botaoDesenho = document.querySelector("#filtro-desenho");
+
+    botaoDisponivel.addEventListener("click", () => {
+        filtro.disponibilidade = "disponivel";
+        paginaAtual = 1;
+        selecionarBotao(botaoDisponivel);
+        mostrarCarros(paginaAtual);
+    });
+
+    botaoIndisponivel.addEventListener("click", () => {
+        filtro.disponibilidade = "indisponivel";
+        paginaAtual = 1;
+        selecionarBotao(botaoIndisponivel);
+        mostrarCarros(paginaAtual);
+    });
+
+    botaoTodos.addEventListener("click", () => {
+        filtro.disponibilidade = "todos";
+        filtro.categoria = "todos";
+        paginaAtual = 1;
+        selecionarBotao(botaoTodos);
+        mostrarCarros(paginaAtual);
+    });
+
+    botaoFilme.addEventListener("click", () => {
+        filtro.categoria = "filme";
+        paginaAtual = 1;
+        selecionarBotao(botaoFilme);
+        mostrarCarros(paginaAtual);
+    });
+
+    botaoSerie.addEventListener("click", () => {
+        filtro.categoria = "série";
+        paginaAtual = 1;
+        selecionarBotao(botaoSerie);
+        mostrarCarros(paginaAtual);
+    });
+
+    botaoDesenho.addEventListener("click", () => {
+        filtro.categoria = "desenho";
+        paginaAtual = 1;
+        selecionarBotao(botaoDesenho);
+        mostrarCarros(paginaAtual);
+    });
+}
+
+async function inicializarHome() {
+    await criarCardHomePage();
+    await mostrarCarros(1);
+}
+
 
 let paginaAtual = 1;
 let totalPaginas = 5;
@@ -231,78 +361,12 @@ const filtro = {
     disponibilidade: "todos"
 };
 
-mostrarCarros(paginaAtual);
-
 const quantidadeVeiculos = document.querySelector(".quantidade-veiculos");
 
-const botaoVoltarPagina = document.querySelector("#voltar-pagina");
+if (document.querySelector(".cards-principal")) {
+    inicializarHome();
+}
 
-botaoVoltarPagina.addEventListener("click", () => {
-    if (paginaAtual > 1) {
-        paginaAtual--;
-        mostrarCarros(paginaAtual);
-    }
-});
-
-const botaoAvancarPagina = document.querySelector("#avancar-pagina");
-
-botaoAvancarPagina.addEventListener("click", () => {
-    if (paginaAtual < totalPaginas) {
-        paginaAtual++;
-        mostrarCarros(paginaAtual);
-    }
-});
-
-const inputPesquisa = document.querySelector("#pesquisa");
-
-inputPesquisa.addEventListener("input", ()=>{
-    filtro.nome = inputPesquisa.value;
-    paginaAtual = 1;
-    mostrarCarros(paginaAtual);
-});
-
-const botoesFiltro = document.querySelectorAll(".botoes-filtro");
-const botaoDisponivel = document.querySelector("#filtro-disponivel");
-const botaoIndisponivel = document.querySelector("#filtro-indisponivel");
-botaoDisponivel.addEventListener("click", ()=> {
-    filtro.disponibilidade = "disponivel";
-    paginaAtual = 1;
-    selecionarBotao(botaoDisponivel);
-    mostrarCarros(paginaAtual);
-});
-botaoIndisponivel.addEventListener("click", ()=> {
-    filtro.disponibilidade = "indisponivel";
-    paginaAtual = 1;
-    selecionarBotao(botaoIndisponivel);
-    mostrarCarros(paginaAtual);
-});
-
-const botaoTodos = document.querySelector("#filtro-todos");
-const botaoFilme = document.querySelector("#filtro-filme");
-const botaoSerie = document.querySelector("#filtro-serie");
-const botaoDesenho = document.querySelector("#filtro-desenho");
-botaoTodos.addEventListener("click", ()=> {
-    filtro.disponibilidade = "todos";
-    filtro.categoria = "todos";
-    selecionarBotao(botaoTodos);
-    paginaAtual = 1;
-    mostrarCarros(paginaAtual);
-});
-botaoFilme.addEventListener("click", ()=> {
-    filtro.categoria = "filme";
-    paginaAtual = 1;
-    selecionarBotao(botaoFilme);
-    mostrarCarros(paginaAtual);
-});
-botaoSerie.addEventListener("click", ()=> {
-    filtro.categoria = "série";
-    paginaAtual = 1;
-    selecionarBotao(botaoSerie);
-    mostrarCarros(paginaAtual);
-});
-botaoDesenho.addEventListener("click", ()=> {
-    filtro.categoria = "desenho";
-    paginaAtual = 1;
-    selecionarBotao(botaoDesenho);
-    mostrarCarros(paginaAtual);
-});
+if (document.querySelector("#pesquisa")) {
+    inicializarCatalogo();
+}
