@@ -1,5 +1,5 @@
 main {
-    padding: 32px 24px 0px 24px;
+    padding: 96px 24px 80px 24px;
 }
 
 .subtitulo {
@@ -52,13 +52,6 @@ main {
     border: 1px solid rgba(37, 99, 235, 0.15);
 }
 
-#pesquisa {
-    color: white; /* cor do texto digitado */
-    font-size: 14px;
-    font-family: Cousine;
-    font-weight: 700;
-}
-
 .main-pesquisa input::placeholder {
     font-family: Cousine;
     font-weight: 400;
@@ -87,13 +80,6 @@ main {
     text-align: center;
     color: rgba(100, 116, 139, 1);
     cursor: pointer;
-}
-
-.main-buttons button.ativo {
-    background: rgba(37, 99, 235, 1);
-    box-shadow: 0px 0px 12px 0px rgba(37, 99, 235, 0.35);
-    color: rgba(255, 255, 255, 1);
-
 }
 
 .main-veiculos {
@@ -153,18 +139,6 @@ main {
     color: rgba(81, 162, 255, 1);
 }
 
-#desenho {
-    background: rgba(254, 154, 0, 0.1);
-    border: 1px solid rgba(254, 154, 0, 0.25);
-    color: rgba(255, 185, 0, 1);
-}
-
-#série {
-    background: rgba(173, 70, 255, 0.1);
-    border: 1px solid rgba(173, 70, 255, 0.25);
-    color: rgba(194, 122, 255, 1);
-}
-
 .status {
     position: absolute;
     top: 20px;
@@ -181,13 +155,7 @@ main {
     color: rgba(255, 100, 103, 1);
 }
 
-#disponivel {
-    background: rgba(0, 188, 125, 0.1);
-    border: 1px solid rgba(0, 188, 125, 0.25);
-    color: rgba(0, 212, 146, 1);
-}
-
-.ranking {  
+.ranking {
     position: absolute;
     left: 20px;
     bottom: 20px;
