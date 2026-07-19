@@ -1,17 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
-html {
-    background: white;
-}
-
-body {
-    max-width: 1112px;
-    width: 100%;
-    background: rgba(8, 12, 20, 1);
-}
-
 main {
     padding: 96px 24px 80px 24px;
 }
@@ -54,8 +40,8 @@ main {
 }
 
 .main-pesquisa input {
-    width: 384PX;
-    height: 42PX;
+    width: 384px;
+    height: 42px;
     padding-top: 10px;
     padding-right: 16px;
     padding-bottom: 10px;
@@ -99,7 +85,7 @@ main {
 .main-veiculos {
     width: 1064px;
     width: 100%;
-    padding-top: 32px; 
+    padding-top: 32px;
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -134,12 +120,7 @@ main {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        0deg,
-        #0D1322 0%,
-        rgba(13, 19, 34, 0.1) 50%,
-        rgba(0, 0, 0, 0) 100%
-    );
+    background: linear-gradient(0deg, #0d1322 0%, rgba(13, 19, 34, 0.1) 50%, rgba(0, 0, 0, 0) 100%);
 }
 
 .categoria {
@@ -174,7 +155,7 @@ main {
     color: rgba(255, 100, 103, 1);
 }
 
-.ranking {  
+.ranking {
     position: absolute;
     left: 20px;
     bottom: 20px;

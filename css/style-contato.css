@@ -1,17 +1,3 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-
-main {
-    width: 1112px;
-    margin: auto;
-}
-
-body {
-    background-color: #080C14;
-}
-
 header {
     height: 65px;
 }
@@ -32,7 +18,7 @@ header {
     font-weight: 400;
     font-style: Regular;
     letter-spacing: 1.2px;
-    color: #2563EB;
+    color: #2563eb;
 }
 
 .header h1 {
@@ -52,8 +38,8 @@ header {
     justify-content: space-evenly;
     width: 622.39px;
     height: 431px;
-    background-color: #0D1322;
-    border: 1px solid #2563EB26;
+    background-color: #0d1322;
+    border: 1px solid #2563eb26;
     border-radius: 16px;
 }
 
@@ -84,14 +70,14 @@ header {
     font-weight: 400;
     font-style: Regular;
     letter-spacing: 1.2px;
-    color: #64748B;
+    color: #64748b;
 }
 
 .label_pack input {
     height: 42px;
     border-radius: 16px;
-    border: 1px solid #2563EB26;
-    background-color: #141D30;
+    border: 1px solid #2563eb26;
+    background-color: #141d30;
     height: 42px;
     width: 278.1875px;
     padding-left: 16px;
@@ -106,9 +92,9 @@ header {
 }
 
 .label_pack textarea {
-    border: 1px solid #2563EB26;
+    border: 1px solid #2563eb26;
     border-radius: 16px;
-    background-color: #141D30;
+    background-color: #141d30;
     width: 572.390625px;
     height: 128px;
     font-family: Cousine;
@@ -123,8 +109,9 @@ header {
     color: white;
 }
 
-.label_pack input::placeholder,.label_pack textarea::placeholder {
-    color: white; 
+.label_pack input::placeholder,
+.label_pack textarea::placeholder {
+    color: white;
     font-family: Cousine;
     font-size: 14px;
     font-weight: 400;
@@ -143,7 +130,7 @@ header {
     border: none;
     border-radius: 16px;
     color: white;
-    background-color: #2563EB;
+    background-color: #2563eb;
     font-family: Inter;
     font-size: 20px;
     font-weight: 900;
@@ -166,9 +153,9 @@ header {
     align-items: center;
     padding-left: 20px;
     gap: 16px;
-    border: 1px solid #2563EB26;
+    border: 1px solid #2563eb26;
     border-radius: 16px;
-    background-color: #2563EB1A;
+    background-color: #2563eb1a;
 }
 
 .adress_info {
@@ -179,9 +166,9 @@ header {
     align-items: center;
     padding-left: 20px;
     gap: 16px;
-    border: 1px solid #2563EB26;
+    border: 1px solid #2563eb26;
     border-radius: 16px;
-    background-color: #2563EB1A;
+    background-color: #2563eb1a;
 }
 
 .time_info {
@@ -192,9 +179,9 @@ header {
     align-items: center;
     padding-left: 20px;
     gap: 16px;
-    border: 1px solid #2563EB26;
+    border: 1px solid #2563eb26;
     border-radius: 16px;
-    background-color: #2563EB1A;
+    background-color: #2563eb1a;
 }
 
 .email_info {
@@ -205,9 +192,9 @@ header {
     align-items: center;
     padding-left: 20px;
     gap: 16px;
-    border: 1px solid #2563EB26;
+    border: 1px solid #2563eb26;
     border-radius: 16px;
-    background-color: #2563EB1A;
+    background-color: #2563eb1a;
 }
 
 .info_text {
@@ -221,7 +208,7 @@ header {
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 1.2px;
-    color: #64748B;
+    color: #64748b;
 }
 
 .info_text p {
@@ -229,7 +216,7 @@ header {
     font-size: 14px;
     font-weight: 400;
     font-style: Regular;
-    color: #F1F5F9;
+    color: #f1f5f9;
 }
 
 .location {
@@ -239,9 +226,9 @@ header {
     justify-content: center;
     width: 100%;
     height: 174px;
-    border: 1px solid #2563EB26;
+    border: 1px solid #2563eb26;
     border-radius: 16px;
-    background-color: #2563EB1A;
+    background-color: #2563eb1a;
     gap: 8px;
 }
 
@@ -265,7 +252,7 @@ header {
     font-size: 12px;
     font-style: Bold;
     font-weight: 700;
-    color: #2563EB;
+    color: #2563eb;
 }
 
 .location_text p {
@@ -273,19 +260,19 @@ header {
     font-size: 12px;
     font-style: Regular;
     font-weight: 400;
-    color: #64748B;
+    color: #64748b;
 }
 
 .location {
-    position: relative; 
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 174px;
-    border: 1px solid #2563EB26;
+    border: 1px solid #2563eb26;
     border-radius: 16px;
-    background-color: #2563EB1A;
+    background-color: #2563eb1a;
     gap: 8px;
     overflow: hidden;
 }
@@ -308,7 +295,7 @@ header {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background-color: #0D1322CC;
+    background-color: #0d1322cc;
     padding: 12px 20px;
     border-radius: 12px;
 }
