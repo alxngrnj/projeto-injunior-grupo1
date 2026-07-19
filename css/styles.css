@@ -60,6 +60,7 @@ header {
 }
 
 footer {
+    margin-top: 96px;
     align-self: center;
     width: 1112px;
     border-top-width: 1px;
