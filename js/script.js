@@ -10,13 +10,22 @@ window.addEventListener("load", () => {
             <a href="../index.html" id="btn_inicio">Início</a>
             <a href="../html/catalogo.html" id="btn_catalogo">Catálogo</a>
             <a href="#" id="btn_Reservas">Reservas</a>
-            <a href="../html/sobre.html" id="btn_sobre" class="ativo">Sobre</a>
+            <a href="../html/sobre.html" id="btn_sobre">Sobre</a>
             <a href="../html/contato.html" id="btn_contato">Contato</a>
         </nav>
-        <a id="dir_head" href="#">
+        <a id="dir_head" href="../html/catalogo.html">
             <img src="../assets/explorar.png" alt="Explorar" />
         </a>
     `;
+const paginaAtual = window.location.pathname.split("/").pop();
+
+const links = document.querySelectorAll("#centro_head a");
+links.forEach(link => {
+    const hrefPagina = link.getAttribute("href").split("/").pop();
+    if (hrefPagina === paginaAtual) {
+        link.classList.add("ativo");
+    }
+});
 
     footer.innerHTML = `
         <div class="footer-div">
