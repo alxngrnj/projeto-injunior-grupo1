@@ -3,11 +3,11 @@ const footer = document.querySelector("footer");
 
 window.addEventListener("load", () => {
     header.innerHTML = `
-        <a id="btn_principal" href="/index.html">
+        <a id="btn_principal" href="../index.html">
             <img src="../assets/Button.png" alt="Carr{In}hos" />
         </a>
         <nav id="centro_head">
-            <a href="/index.html" id="btn_inicio">Início</a>
+            <a href="../index.html" id="btn_inicio">Início</a>
             <a href="../html/catalogo.html" id="btn_catalogo">Catálogo</a>
             <a href="#" id="btn_Reservas">Reservas</a>
             <a href="../html/sobre.html" id="btn_sobre" class="ativo">Sobre</a>
@@ -149,7 +149,7 @@ function criarCard(carro) {
                         <h2 id="card-preco">${carro.valor_aluguel_dia}</h2>
                         <div class="card-aluguel">
                             <button class=${disponibilidade}><a href="#">${disponibilidadeTexto}</a></button>
-                            <button class="botao-detalhes"><a href="#"><img src="/assets/Button_agenda.png"></a></button>
+                            <button class="botao-detalhes"><a href="#"><img src="../assets/Button_agenda.png"></a></button>
                         </div>
                     </div>
                 </div>
