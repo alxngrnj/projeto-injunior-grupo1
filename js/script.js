@@ -3,17 +3,17 @@ const footer = document.querySelector("footer");
 
 window.addEventListener("load", () => {
     header.innerHTML = `
-        <a id="btn_principal" href="../index.html">
+        <a id="btn_principal" href="pagina_inicial.html">
             <img src="../assets/Button.png" alt="Carr{In}hos" />
         </a>
         <nav id="centro_head">
-            <a href="../index.html" id="btn_inicio">Início</a>
-            <a href="../html/catalogo.html" id="btn_catalogo">Catálogo</a>
+            <a href="pagina_inicial.html" id="btn_inicio">Início</a>
+            <a href="catalogo.html" id="btn_catalogo">Catálogo</a>
             <a href="#" id="btn_Reservas">Reservas</a>
-            <a href="../html/sobre.html" id="btn_sobre">Sobre</a>
-            <a href="../html/contato.html" id="btn_contato">Contato</a>
+            <a href="sobre.html" id="btn_sobre">Sobre</a>
+            <a href="contato.html" id="btn_contato">Contato</a>
         </nav>
-        <a id="dir_head" href="../html/catalogo.html">
+        <a id="dir_head" href="catalogo.html">
             <img src="../assets/explorar.png" alt="Explorar" />
         </a>
     `;
@@ -30,9 +30,8 @@ links.forEach(link => {
     footer.innerHTML = `
         <div class="footer-div">
             <div class="footer-coluna">
-                <button class="footer-button">
+                <button class="footer-button" onclick="window.location.href='pagina_inicial.html'">
                     <img src="../assets/Button.png" />
-                    <a href="../index.html"></a>
                 </button>
                 <div class="footer-descricao">
                     <p>A única plataforma de aluguel de veículos icônicos do entretenimento mundial.</p>
@@ -48,7 +47,7 @@ links.forEach(link => {
                 <h3>PLATAFORMA</h3>
                 <nav>
                     <ul class="footer-lista">
-                        <li><a href="../html/catalogo.html">Catálogo</a></li>
+                        <li><a href="catalogo.html">Catálogo</a></li>
                         <li><a href="#">Minhas Reservas</a></li>
                         <li><a href="#">Como Funciona</a></li>
                         <li><a href="#">Preços</a></li>
@@ -59,8 +58,8 @@ links.forEach(link => {
                 <h3>EMPRESA</h3>
                 <nav>
                     <ul class="footer-lista">
-                        <li><a href="../html/sobre.html">Sobre Nós</a></li>
-                        <li><a href="../html/contato.html">Contato</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="contato.html">Contato</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Parceiros</a></li>
                     </ul>
