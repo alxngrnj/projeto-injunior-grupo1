@@ -1,28 +1,21 @@
-body {
-    background-color: #080C14;
-    max-width: 1112px; width: 100%;
-    margin: 0 auto;
-}
 .secao-titulo {
     width: 100%;
-    max-width: 1112px; width: 100%;
-    background: linear-gradient(180deg, #162456 40%, #080C14 100%);
+    background: linear-gradient(180deg, #162456 40%, #080c14 100%);
     font-family: Inter;
     text-align: center;
-    margin: 0 auto;
-   padding: 60px 24px;
-   color: white
+    padding: 60px 10px;
+    color: white;
 }
 
 .secao-titulo-label {
     color: rgb(59, 91, 219);
-    font-family: 'Cousine', monospace;
+    font-family: "Cousine", monospace;
     letter-spacing: 2px;
     font-size: 14px;
 }
 
 .secao-titulo-texto {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-weight: 900;
     font-size: 56px;
     margin: 16px 0;
@@ -34,62 +27,59 @@ body {
 }
 
 .secao-titulo-descricao {
-    color: #94A3B8;
+    color: #94a3b8;
     max-width: 600px;
     margin: 0 auto;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
-#cards{
+#cards {
     display: flex;
     justify-content: center;
     gap: 32px;
     align-items: center;
-    max-width: 1112px; width: 100%;
+    max-width: 1112px;
+    width: 100%;
     margin: 0 auto;
-    background-color: #080C14;
+    background-color: #080c14;
     padding: 0 24px;
-    
-
 }
 
-.card{
+.card {
     display: flex;
     flex-direction: column;
     height: 270px;
     width: 338.66px;
-    border: 1px  solid #2563EB26;
+    border: 1px solid #2563eb26;
     border-radius: 16px;
-    background-color: #0D1322;
-    font-family: 'Barlow Condensed', sans-serif;
+    background-color: #0d1322;
+    font-family: "Barlow Condensed", sans-serif;
     padding: 32px;
     box-sizing: border-box;
 }
 
-.card img{
+.card img {
     width: 48px;
     height: 48px;
 }
 
-.card span{
-    color: #F1F5F9;
+.card span {
+    color: #f1f5f9;
     font-weight: 900;
     padding-top: 20px;
-    padding-top: 20px;
     font-size: 30px;
-
 }
 
-.card p{
+.card p {
     padding-top: 12px;
     font-weight: 400;
     font-size: 14px;
-    color: #64748B;
+    color: #64748b;
     font-family: Inter;
     line-height: 22.75px;
 }
 
-#nossa_jornada{
+#nossa_jornada {
     display: flex;
     flex-direction: column;
     max-width: 672px;
@@ -98,18 +88,18 @@ body {
     padding-top: 80px;
     box-sizing: border-box;
 }
-.jornada_ano{
-    font-family: 'Cousine', monospace;
+.jornada_ano {
+    font-family: "Cousine", monospace;
     font-weight: 400;
     font-size: 12px;
-    color: #2563EB;
+    color: #2563eb;
 }
-.jornada_titulo_item{
+.jornada_titulo_item {
     padding-top: 8px;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-weight: 900;
     font-size: 20px;
-    color: #F1F5F9;
+    color: #f1f5f9;
 }
 
 .jornada_item {
@@ -118,32 +108,32 @@ body {
     margin-bottom: 60px;
 }
 
-.jornada_item p{
+.jornada_item p {
     padding-top: 4px;
-    font-family: 'Inter', monospace;
+    font-family: "Inter", monospace;
     font-size: 14px;
     font-weight: 400;
-    color: #64748B;
+    color: #64748b;
 }
 
-#jornada_titulo{
+#jornada_titulo {
     display: flex;
     justify-content: center;
     font-size: 12px;
-    font-family: 'Cousine', monospace;
+    font-family: "Cousine", monospace;
     letter-spacing: 1.2px;
     font-weight: 400;
-    color:#2563EB
+    color: #2563eb;
 }
 
-.jornada_numero{
-    font-family: 'Cousine', monospace;
+.jornada_numero {
+    font-family: "Cousine", monospace;
     font-weight: 700;
     font-size: 12px;
-    color: #2563EB;
+    color: #2563eb;
     padding: 10px;
-    border: 1px solid #2563EB4D;
-    background-color: #2563EB1A;
+    border: 1px solid #2563eb4d;
+    background-color: #2563eb1a;
     border-radius: 999px;
     width: 40px;
     height: 40px;
@@ -152,10 +142,11 @@ body {
     justify-content: center;
     padding: 0;
     flex-shrink: 0;
-    position: relative; 
+    position: relative;
 }
 
-.jornada_item .jornada_numero::after { /*cria um pseudo elemento pra fazer a linha*/
+.jornada_item .jornada_numero::after {
+    /*cria um pseudo elemento pra fazer a linha*/
     content: ""; /*precisa disso pra aparecer mesmo vazio*/
     position: absolute;
     top: 50px;
@@ -163,10 +154,10 @@ body {
     transform: translateX(-50%);
     width: 1px;
     height: 62px;
-    background-color: #2563EB4D;
+    background-color: #2563eb4d;
 }
 
-#resumo_jornada{
+#resumo_jornada {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,12 +166,12 @@ body {
     height: 145px;
     margin: 80px;
     border-radius: 16px;
-    border: 1px solid #2563EB26;
-    background-color: #0D1322;
+    border: 1px solid #2563eb26;
+    background-color: #0d1322;
     box-sizing: border-box;
 }
 
-.coluna_resumo{
+.coluna_resumo {
     display: flex;
     justify-content: space-between;
     align-self: center;
@@ -189,23 +180,23 @@ body {
     box-sizing: border-box;
 }
 
-.coluna_resumo > div{
+.coluna_resumo > div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.coluna_num{
-    font-family: 'Inter', sans-serif;
+.coluna_num {
+    font-family: "Inter", sans-serif;
     font-weight: 900;
     font-size: 36px;
-    color: #2563EB;
+    color: #2563eb;
 }
 
-.coluna_desc{
-    font-family: 'Cousine', monospace;
-    font-weight: 400;   
+.coluna_desc {
+    font-family: "Cousine", monospace;
+    font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    color: #64748B;
+    color: #64748b;
 }
