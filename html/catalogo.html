@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Catálogo</title>
+        <link rel="stylesheet" href="../css/catalogo.css" />
+        <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="main-titulo">
+            <p class="subtitulo">CATÁLOGO</p>
+            <h1>TODOS OS VEÍCULOS</h1>
+            <p class="quantidade-veiculos"></p>
+        </div>
+        <div class="main-pesquisa">
+            <input type="text" placeholder="Buscar por nome ou obra..." id="pesquisa">
+            <div class="main-buttons">
+                <button class="botoes-filtro" id="filtro-todos">Todos</button>
+                <button class="botoes-filtro" id="filtro-disponivel">Disponível</button>
+                <button class="botoes-filtro" id="filtro-indisponivel">Indisponível</button>
+                <button class="botoes-filtro" id="filtro-filme">Filme</button>
+                <button class="botoes-filtro" id="filtro-serie">Série</button>
+                <button class="botoes-filtro" id="filtro-desenho">Desenho</button>
+            </div>
+        </div>
+        <div class="main-veiculos"></div>
+        <div class="paginacao">
+            <button class="botao-paginacao" id="voltar-pagina"><</button>
+            <div class="botoes-paginacao"></div>
+            <button class="botao-paginacao" id="avancar-pagina">></button>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>

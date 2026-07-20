@@ -1,0 +1,355 @@
+main {
+    padding: 32px 24px 0px 24px;
+}
+
+.subtitulo {
+    font-family: Cousine;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.2px;
+    color: rgba(37, 99, 235, 1);
+}
+
+.main-titulo h1 {
+    padding-top: 8px;
+    font-family: Barlow Condensed;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 60px;
+    letter-spacing: 0px;
+    color: rgba(241, 245, 249, 1);
+}
+
+.quantidade-veiculos {
+    padding-top: 8px;
+    font-family: Cousine;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: rgba(100, 116, 139, 1);
+}
+
+.main-pesquisa {
+    display: flex;
+    flex-direction: row;
+    padding-top: 40px;
+    gap: 16px;
+    align-items: center;
+}
+
+.main-pesquisa input {
+    width: 384px;
+    height: 42px;
+    padding-top: 10px;
+    padding-right: 16px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    border-radius: 16px;
+    border-width: 1px;
+    background: rgba(13, 19, 34, 1);
+    border: 1px solid rgba(37, 99, 235, 0.15);
+}
+
+#pesquisa {
+    color: white; 
+    font-size: 14px;
+    font-family: Cousine;
+    font-weight: 700;
+}
+
+.main-pesquisa input::placeholder {
+    font-family: Cousine;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(241, 245, 249, 1);
+}
+
+.main-buttons {
+    display: flex;
+    width: 544.421875px;
+    gap: 20px;
+}
+
+.main-buttons button {
+    padding: 8px 14px 8px 14px;
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    background: rgba(13, 19, 34, 1);
+    border-radius: 16px;
+    font-family: Cousine;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: rgba(100, 116, 139, 1);
+    cursor: pointer;
+}
+
+.main-buttons button.ativo {
+    background: rgba(37, 99, 235, 1);
+    box-shadow: 0px 0px 12px 0px rgba(37, 99, 235, 0.35);
+    color: rgba(255, 255, 255, 1);
+
+}
+
+.main-veiculos {
+    width: 1064px;
+    width: 100%;
+    padding-top: 32px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 341.328125px;
+    height: 376px;
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    border-radius: 16px;
+    background: rgba(13, 19, 34, 1);
+    overflow: hidden;
+}
+
+.card-imagem {
+    position: relative;
+    width: 100%;
+    height: 192px;
+    overflow: hidden;
+}
+
+.card-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-imagem::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, #0d1322 0%, rgba(13, 19, 34, 0.1) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.categoria {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border-radius: 4px;
+    padding: 2px 8px 2px 8px;
+    background: rgba(43, 127, 255, 0.1);
+    border: 1px solid rgba(43, 127, 255, 0.25);
+    font-family: Cousine;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    color: rgba(81, 162, 255, 1);
+}
+
+#desenho {
+    background: rgba(254, 154, 0, 0.1);
+    border: 1px solid rgba(254, 154, 0, 0.25);
+    color: rgba(255, 185, 0, 1);
+}
+
+#série {
+    background: rgba(173, 70, 255, 0.1);
+    border: 1px solid rgba(173, 70, 255, 0.25);
+    color: rgba(194, 122, 255, 1);
+}
+
+.status {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 32px;
+    padding: 4px 10px 4px 10px;
+    background: rgba(251, 44, 54, 0.1);
+    border: 1px solid rgba(251, 44, 54, 0.25);
+    font-family: Cousine;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    color: rgba(255, 100, 103, 1);
+}
+
+#disponivel {
+    background: rgba(0, 188, 125, 0.1);
+    border: 1px solid rgba(0, 188, 125, 0.25);
+    color: rgba(0, 212, 146, 1);
+}
+
+.ranking {  
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    border-radius: 32px;
+    padding: 4px 8px 4px 8px;
+    background: rgba(254, 152, 0, 0.137);
+    border-top: 1px solid rgba(254, 154, 0, 0.2);
+    font-family: Cousine;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    color: rgba(255, 185, 0, 1);
+}
+
+.card-imagem::after {
+    z-index: 1;
+}
+
+.categoria,
+.status,
+.ranking {
+    z-index: 2;
+}
+
+.card-descricao {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+#card-titulo {
+    height: 25px;
+    align-items: center;
+    padding-bottom: 2px;
+    font-family: Barlow Condensed;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0px;
+    color: rgba(241, 245, 249, 1);
+}
+
+#card-subtitulo {
+    padding-bottom: 12px;
+    font-family: Cousine;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    color: rgba(100, 116, 139, 1);
+}
+
+#por-dia {
+    font-family: Cousine;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    color: rgba(100, 116, 139, 1);
+}
+
+#card-preco {
+    height: 34px;
+    padding-top: 2px;
+    font-family: Cousine;
+    font-weight: 700;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    color: rgba(37, 99, 235, 1);
+}
+
+.card-aluguel {
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding-top: 12px;
+}
+
+.botao-indisponivel {
+    border: none;
+    border-radius: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: rgba(20, 29, 48, 1);
+}
+
+.botao-indisponivel a {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: rgba(100, 116, 139, 1);
+    text-decoration: none;
+    padding: 8px 88px 8px 88px;
+}
+
+.botao-alugar {
+    width: 100%;
+    border: none;
+    border-radius: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: rgba(37, 99, 235, 1);
+}
+
+.botao-alugar a {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+    padding: 8px 88px 8px 88px;
+}
+
+.botao-detalhes {
+    width: 41px;
+    height: 32px;
+    border: none;
+    border-radius: 16px;
+    background: rgba(15, 23, 43, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginacao {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 40px;
+}
+
+.paginacao button {
+    border: none;
+    width: 36px;
+    border-radius: 16px;
+    padding: 8px 0px 8px 0px;
+    background: rgba(37, 99, 235, 1);
+    font-family: Inter;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.botoes-paginacao {
+    display: flex;
+    gap: 16px;
+}

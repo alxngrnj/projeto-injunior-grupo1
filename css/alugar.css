@@ -1,0 +1,296 @@
+header {
+    height: 65px;
+}
+
+.header {
+    height: 84px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 68px;
+    padding-top: 31px;
+    gap: 8px;
+}
+
+.header h5 {
+    font-family: Cousine;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: Regular;
+    letter-spacing: 1.2px;
+    color: #2563eb;
+}
+
+.header h1 {
+    font-family: Barlow Condensed;
+    font-size: 60px;
+    font-weight: 900;
+    font-size: Black;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.data_resume {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 68px;
+}
+
+/* ------- Section de Forms -------- */
+
+.data {
+    display: flex;
+    flex-direction: column;
+    width: 640px;
+    gap: 24px;
+}
+
+.label_pack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.label_pack label {
+    font-family: Cousine;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: Regular;
+    letter-spacing: 1.2px;
+    color: #64748b;
+}
+
+.label_pack input {
+    height: 42px;
+    border-radius: 16px;
+    border: 1px solid #2563eb26;
+    background-color: #141d30;
+    height: 42px;
+    width: 287px;
+    padding-left: 16px;
+}
+
+
+
+.label_pack input:focus {
+    color: white;
+}
+
+
+.heading {
+    font-family: Barlow Condensed;
+    font-size: 26px;
+    font-style: Black;
+    font-weight: 900;
+    color: #F1F5F9;
+}
+
+.data_resume {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+
+/* ------- Dados Pessoais -------- */
+
+
+.personal_data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 24px;
+    padding-left: 24px;
+    width: 640px;
+    height: 240px;
+    background-color: #0d1322;
+    border: 1px solid #2563eb26;
+    border-radius: 16px;
+    gap: 16px;
+}
+
+.name_cpf {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 16px;
+}
+
+.email_phone {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 16px;
+}
+
+
+/* ------- Dados da Reserva -------- */
+
+.booking_data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 24px;
+    padding-left: 24px;
+    width: 640px;
+    height: 240px;
+    background-color: #0d1322;
+    border: 1px solid #2563eb26;
+    border-radius: 16px;
+    gap: 16px;
+}
+
+.vehicle_local {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 16px;
+}
+
+.dates {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 16px;
+}
+
+/* ------- Botão de Confirmar Reserva -------- */
+
+.send_button {
+    width: 690px;
+    height: 60px;
+    border: none;
+    border-radius: 16px;
+    color: white;
+    background-color: #2563eb;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 900;
+    font-style: Black;
+    cursor: pointer;
+}
+
+/* ------- Resumo -------- */
+
+.resumo {
+    display: flex;
+    flex-direction: column;
+    width: 304px;
+    height: 339px;
+    background-color: #0d1322;
+    border: 1px solid #2563eb26;
+    border-radius: 16px;
+}
+
+.resumo h5 {
+    font-family: Barlow Condensed;
+    font-size: 12px;
+    font-weight: 900;
+    font-style: Black;
+    letter-spacing: 1.2px;
+    color: #64748B;
+    display: flex;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.image {
+    width: 262px;
+    height: 144px;
+    border-radius: 16px;
+}
+
+.img_text {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 900;
+    font-style: Black;
+    color: #F1F5F9;
+    position: absolute; 
+    bottom: 1px;
+    left: 35px;
+}
+
+.preview {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 12px;
+}
+
+.daily_value {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.days {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.divider {
+    width: 265px; /* ajuste até o tamanho que quiser */
+    height: 1px;
+    border: none;
+    background-color: #2563eb26;
+    margin: 12px 20px 0px;
+}
+
+.total_value {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 24px;
+}
+
+.day_style {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400px;
+    font-style: Regular;
+    color: #64748B;
+}
+
+.value_style {
+    font-family: Cousine;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: Regular;
+    color: #F1F5F9;
+}
+
+.value_total_style {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: Semi Bold;
+    color: #F1F5F9;
+}
+
+.total_style {
+    font-family: Cousine;
+    font-size: 20px;
+    font-style: Bold;
+    color: #2563EB;
+}

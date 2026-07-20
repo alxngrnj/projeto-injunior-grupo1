@@ -1,0 +1,234 @@
+.indice{
+    font-family: 'Cousine', monospace;
+    color: #64748B;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    width: 1112px;
+    height: 72px;
+    padding: 8px;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.indice a{
+    text-decoration: none;
+    color: #64748B;
+}
+.indice_atual{
+    color: #2563EB;
+}
+
+.individual_desc{
+    display: flex;
+    gap: 48px;
+    justify-content: space-between;
+}
+
+.individual_esquerda{
+    width: 508px;
+}
+
+.individual_esquerda img{
+    width: 506px;
+    height: 287.75px;
+    opacity: 85%;
+    border-radius: 15px;
+}
+
+.individual_direita{
+    display: flex;
+    flex-direction: column;
+    width: 508px;
+}
+
+.carro_nome{
+    font-family: 'Barlow Condensed';
+    color: #F1F5F9;
+    font-weight: 900;
+    font-size: 60px;
+}
+
+.carro_origem{
+    font-family: 'Cousine';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color:#64748B;
+    
+}
+
+.individual_direita p{
+    padding-top: 24px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22.75px;
+    color: #F1F5F9CC;
+
+}
+
+.individual_valor{
+    margin-top: 32px;
+    padding: 32px;
+    background-color:#0D1322;
+    border: 1px solid #2563EB26;
+    border-radius: 16px;
+    
+}
+
+.individual_infos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.individual_infos span{
+    font-family: 'Cousine';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 1.2px;
+    color: #64748B;
+}
+
+#disponivel {
+    border-radius: 34px;
+    padding: 4px 10px 4px 10px;
+    border: 1px solid rgba(0, 188, 125, 0.25);
+    background: rgba(0, 188, 125, 0.1);
+    font-family: Cousine;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    color: rgba(0, 212, 146, 1);
+}
+
+#alugado, #manutencao {
+    border-radius: 34px;
+    padding: 4px 10px 4px 10px;
+    border: 1px solid rgba(251, 44, 54, 0.25);
+    background: rgba(251, 44, 54, 0.1);
+    font-family: Cousine;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    color: rgba(255, 100, 103, 1);
+}
+
+#valor{
+    font-family: 'Inter';
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 48px;
+    color: #2563EB;
+}
+
+.btns_individual{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.btn_reservar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2563EB;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    width: 348px;
+    height: 50px;
+    border-radius: 16px;
+    color: #FFFFFF;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#btn_indisponivel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgba(20, 29, 48, 1);
+    margin-top: 14px;
+    margin-bottom: 14px;
+    width: 348px;
+    height: 50px;
+    border-radius: 16px;
+    color: rgba(100, 116, 139, 1);
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.btn_agenda{
+    height: 50px;
+    width: 148px;
+    border-radius: 16px;
+    border: 1px solid #2563EB4D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #2563EB;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#especs_titulo{
+    margin-top: 16px;
+    font-family: 'Barlow Condensed';
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    color: #64748B;
+}
+.especs_coluna{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.especs_grid{
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.especs_bloco_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 250px;
+    height: 69px;
+    padding: 14px;
+    border: 1px solid #2563EB26;
+    background-color: #0D1322;
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+
+.specs_item{
+    font-family: 'Cousine';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #64748B;
+}
+
+.specs_info{
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14px;
+    color: #F1F5F9
+}
+
