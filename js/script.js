@@ -157,7 +157,7 @@ function criarCard(carro) {
                         <h2 id="card-preco">${carro.valor_aluguel_dia}</h2>
                         <div class="card-aluguel">
                             <button class=${disponibilidade}><a href="#">${disponibilidadeTexto}</a></button>
-                            <button class="botao-detalhes"><a href="#"><img src="../assets/Button_agenda.png"></a></button>
+                            <button class="botao-detalhes"><a href="individual.html?id=${carro.id}"><img src="../assets/Button_agenda.png"></a></button>
                         </div>
                     </div>
                 </div>
