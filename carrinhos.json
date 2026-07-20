@@ -6,13 +6,13 @@
       "universo_origem": "Carros (Pixar)",
       "ano_obra": 2006,
       "url_imagem": "https://upload.wikimedia.org/wikipedia/en/8/82/Lightning_McQueen.png",
-      "status_disponibilidade": "alugada",
+      "status_disponibilidade": "alugado",
       "valor_aluguel_dia": 850,
       "locatario": {
         "nome": "lucas",
         "documento": "123",
-        "data_inicio_aluguel": "1",
-        "data_devolucao_prevista": "2",
+        "data_inicio_aluguel": "123",
+        "data_devolucao_prevista": "123",
         "telefone": "21966272983"
       },
       "categoria": "desenho"

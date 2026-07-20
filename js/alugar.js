@@ -43,16 +43,22 @@ botaoEnviar.addEventListener("click", async () => {
         telefone: document.querySelector("#telefone").value,
     };
 
-    await fetch(`http://localhost:3001/carros/${id}`, {
+    const response = await fetch(`http://localhost:3001/carros/${id}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
             locatario: dados,
-            status_disponibilidade: "alugada"
+            status_disponibilidade: "alugado"
         })
     });
+    if(response.ok) {
+        window.location.href = "../html/pagina_inicial.html"
+    }
+    else {
+        alert("Erro ao realizar o aluguel");
+    }
 });
 
 
