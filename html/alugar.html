@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/alugar.css" />
-        <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="../css/alugar.css" />
+        <link rel="stylesheet" href="../css/styles.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -49,21 +49,21 @@
                         <div class="name_cpf">
                             <div class="label_pack">
                                 <label for="nome">NOME COMPLETO</label>
-                                <input type="text" name="nome" placeholder="Seu nome" />
+                                <input type="text" id="nome_completo" placeholder="Seu nome" />
                             </div>
                             <div class="label_pack">
                                 <label for="nome">CPF</label>
-                                <input type="text" name="cpf" placeholder="000.000.000-00" />
+                                <input type="text" id="cpf" placeholder="000.000.000-00" />
                             </div>
                         </div>
                         <div class="email_phone">
                             <div class="label_pack">
                                 <label for="nome">E-MAIL</label>
-                                <input type="text" name="nome" placeholder="seuemail@gmail.com" />
+                                <input type="email" id="email" placeholder="seuemail@gmail.com" />
                             </div>
                             <div class="label_pack">
                                 <label for="nome">TELEFONE</label>
-                                <input type="text" name="cpf" placeholder="(21) 00000-0000" />
+                                <input type="text" id="telefone" placeholder="(21) 00000-0000" />
                             </div>
                         </div>
                     </form>
@@ -73,23 +73,23 @@
                             <h5>Dados da Reserva</h5>
                         </div>
                         <div class="vehicle_local">
-                            <div class="label_pack">
+                            <div class="label_pack" id="input_nome">
                                 <label for="car_name">VEÍCULO</label>
                                 <input type="text" name="car_name" placeholder="Aston Martin DB5" disabled/>
                             </div>
                             <div class="label_pack">
                                 <label for="pickup">LOCAL DE RETIRADA</label>
-                                <input type="text" name="pickup"/>
+                                <input type="text" id="pickup"/>
                             </div>
                         </div>
                         <div class="dates">
                             <div class="label_pack">
                                 <label for="pickup_date">DATA DE RETIRADA</label>
-                                <input type="text" name="pickup_date"/>
+                                <input type="text" id="pickup_date"/>
                             </div>
                             <div class="label_pack">
                                 <label for="return_date">DATA DE DEVOLUÇÃO</label>
-                                <input type="text" name="return_date"/>
+                                <input type="text" id="return_date"/>
                             </div>                                              
                         </div>
                         </div>
@@ -111,16 +111,19 @@
                         </div>
                         <div class="days">
                             <p class="day_style">Dias</p>
-                            <p class="value_style">1</p>
+                            <p class="value_style" id="quantidade_dias">1</p>
                         </div>
                     </div>
                     <hr class="divider">
                     <div class="total_value">
                         <p class="value_total_style">Total</p>
-                        <p class="total_style">R$ 3.200</p>
+                        <p class="total_style" id="total_valor">R$ 3.200</p>
                     </div>
                 </section>
             </section>
         </main>
+        <footer></footer>
+        <script src="../js/script.js"></script>
+        <script src="../js/alugar.js"></script>
     </body>
     </html>
