@@ -92,6 +92,33 @@
     letter-spacing: 1.2px;
     color: #64748B;
 }
+
+#disponivel {
+    border-radius: 34px;
+    padding: 4px 10px 4px 10px;
+    border: 1px solid rgba(0, 188, 125, 0.25);
+    background: rgba(0, 188, 125, 0.1);
+    font-family: Cousine;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    color: rgba(0, 212, 146, 1);
+}
+
+#alugado, #manutencao {
+    border-radius: 34px;
+    padding: 4px 10px 4px 10px;
+    border: 1px solid rgba(251, 44, 54, 0.25);
+    background: rgba(251, 44, 54, 0.1);
+    font-family: Cousine;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    color: rgba(255, 100, 103, 1);
+}
+
 #valor{
     font-family: 'Inter';
     font-weight: 900;
@@ -118,6 +145,23 @@
     height: 50px;
     border-radius: 16px;
     color: #FFFFFF;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#btn_indisponivel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgba(20, 29, 48, 1);
+    margin-top: 14px;
+    margin-bottom: 14px;
+    width: 348px;
+    height: 50px;
+    border-radius: 16px;
+    color: rgba(100, 116, 139, 1);
     font-family: 'Inter';
     font-weight: 700;
     font-size: 14px;

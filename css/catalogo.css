@@ -292,6 +292,7 @@ main {
 }
 
 .botao-alugar {
+    width: 100%;
     border: none;
     border-radius: 16px;
     padding-top: 8px;
