@@ -45,9 +45,15 @@
       "universo_origem": "Carros (Pixar)",
       "ano_obra": 2006,
       "url_imagem": "https://static.wikia.nocookie.net/carros/images/e/e1/Sally_Carrera.png/revision/latest?cb=20200122035435&path-prefix=pt-br",
-      "status_disponibilidade": "disponivel",
+      "status_disponibilidade": "alugado",
       "valor_aluguel_dia": 750,
-      "locatario": null,
+      "locatario": {
+        "nome": "Lucas",
+        "documento": "123",
+        "data_inicio_aluguel": "123",
+        "data_devolucao_prevista": "123",
+        "telefone": "21966272983"
+      },
       "categoria": "desenho"
     },
     {

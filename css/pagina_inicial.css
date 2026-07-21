@@ -313,7 +313,7 @@
     padding: 4px 10px 4px 10px;
 }
 
-#manutencao {
+#manutencao, #alugado {
     display: inline-block;
     font-family: Cousine;
     font-weight: 400;
